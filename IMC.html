@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Indice de masa corporal
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="diseño.css" />
+    <script>
+        function calcularIMC(){
+            var estatura,peso,resultado;
+            estatura= document.getElementById('txt_estatura').value/100;
+            peso= document.getElementById('txt_peso').value;
+            resultado= peso/(estatura*estatura);
+            if(resultado< 18.5){
+                document.getElementById("mi_imagen").src = 'flaco.jpg'
+            }
+            else if(resultado>=18.5 && resultado<=24.99 ){
+                document.getElementById("mi_imagen").src = 'normal.jpg'
+            }
+            else{
+                document.getElementById("mi_imagen").src = 'gordo.jpg'
+            }
+        }
+    
+    </script>
+   <!---------------------------------------------------------------------------------> 
+</head>
+<body>
+    <form action="" method="GET">
+            <table border="1" align="center">
+                    <tr>
+                            <td colspan="3" align="center">
+                                <label>Indice de masa corporal</label>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <label for="">Peso(Kg)</label>
+                            <input type="text" id="txt_peso">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Estatura(cm)</label>
+                            <input type="text" id="txt_estatura">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <button type="button" OnClick="calcularIMC()";>Calcular</button>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <img id="mi_imagen" src="" >
+                        </td>
+                        
+                    </tr>
+        
+            </table>
+
+    </form>
+    
+
+    
+</body>
+</html>
